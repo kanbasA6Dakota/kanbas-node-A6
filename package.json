@@ -9,5 +9,8 @@
     "start": "node App.js"
   },
   "author": "Dakota Lai",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
