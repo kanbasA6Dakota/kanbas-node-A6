@@ -40,6 +40,7 @@ if (process.env.NODE_ENV !== "development") {
     sessionOptions.cookie = {
         sameSite: "none",
         secure: true,
+        domain: "https://kanbas-node-a6-ajhp.onrender.com",
     };
 }
 app.use(
