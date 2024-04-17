@@ -28,12 +28,7 @@ app.use(cors(
         origin: process.env.FRONTEND_URL
     }
 ));
-const sessionOptions = {
-    
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-};
+
 const sessionOptions = {
     
     secret: process.env.SESSION_SECRET,
