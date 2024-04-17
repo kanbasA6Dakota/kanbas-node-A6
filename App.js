@@ -23,12 +23,13 @@ const app = express();
 // }
 // module.exports = connectToMongo;
 // console.log(process.env.FRONTEND_URL);
-app.use(cors(
-    {
-        credentials: true,
-        origin: process.env.FRONTEND_URL
-    }
-));
+app.use(cors());
+
+// Add Access-Control-Allow-Origin header to responses
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+});
 const sessionOptions = {
     
     secret: process.env.SESSION_SECRET,
