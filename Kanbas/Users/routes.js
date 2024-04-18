@@ -65,15 +65,12 @@ function UserRoutes(app) {
         res.sendStatus(200);
     };
     const profile = async (req, res) => {
-        const currentUser = await req.session["currentUser"];
-        // console.log(currentUser);
-        if (!currentUser) {
-            res.json(currentUser, "currentUser");
-            // res.sendStatus(401);
-            return;
-        }
-        
-        res.json(currentUser)
+    const currentUser = req.session["currentUser"];
+    if (!currentUser) {
+        res.status(401).json({ message: "Unauthorized" });
+        return;
+    }
+    res.status(200).json(currentUser);
     };
     app.post("/api/users", createUser);
     app.get("/api/users", findAllUsers);
